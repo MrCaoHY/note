@@ -25,6 +25,7 @@
 - [MySQL实战45讲](/MySQL%E5%AE%9E%E6%88%9845%E8%AE%B2/)
 - [OAuth 2.0实战课](/OAuth%202.0%E5%AE%9E%E6%88%98%E8%AF%BE/)
 - [OpenResty从入门到实战](/OpenResty%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%AE%9E%E6%88%98/)
+- [PostgreSQL实战教程](/PostgreSQL%E5%AE%9E%E6%88%98%E6%95%99%E7%A8%8B/)
 - [Python核心技术与实战](/Python%E6%A0%B8%E5%BF%83%E6%8A%80%E6%9C%AF%E4%B8%8E%E5%AE%9E%E6%88%98/)
 - [Python自动化办公实战课](/Python%E8%87%AA%E5%8A%A8%E5%8C%96%E5%8A%9E%E5%85%AC%E5%AE%9E%E6%88%98%E8%AF%BE/)
 - [React Hooks 核心原理与实战](/React%20Hooks%20%E6%A0%B8%E5%BF%83%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E6%88%98/)
