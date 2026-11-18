@@ -6,6 +6,150 @@
   <title>极客专栏学习笔记</title>
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify@5/dist/themes/core.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/docsify-sidebar-collapse/dist/sidebar.min.css">
+  <style>
+    :root {
+      --theme-color: #2563eb;
+      --base-font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", "Segoe UI", Roboto, sans-serif;
+      --code-font-family: "JetBrains Mono", "Fira Code", Consolas, Monaco, "Courier New", monospace;
+    }
+
+    body {
+      font-family: var(--base-font-family);
+      color: #1f2937;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* 正文阅读区：限制最大宽度、增加行高与段落呼吸感 */
+    .markdown-section {
+      max-width: 840px;
+      padding: 32px 36px 64px;
+      font-size: 16px;
+      line-height: 1.85;
+      letter-spacing: 0.01em;
+    }
+
+    .markdown-section p,
+    .markdown-section ul,
+    .markdown-section ol {
+      margin-bottom: 1.15em;
+      color: #2c3e50;
+    }
+
+    .markdown-section h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #111827;
+      margin: 0.4em 0 0.8em;
+      padding-bottom: 0.4em;
+      border-bottom: 1px solid #e5e7eb;
+    }
+
+    .markdown-section h2 {
+      font-size: 1.45rem;
+      font-weight: 600;
+      color: #111827;
+      margin: 1.8em 0 0.7em;
+      padding-left: 12px;
+      border-left: 4px solid var(--theme-color);
+    }
+
+    .markdown-section h3 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #1f2937;
+      margin: 1.4em 0 0.5em;
+    }
+
+    /* 引用块美化 */
+    .markdown-section blockquote {
+      margin: 1.2em 0;
+      padding: 12px 18px;
+      background-color: #f8fafc;
+      border-left: 4px solid var(--theme-color);
+      border-radius: 0 6px 6px 0;
+      color: #475569;
+    }
+
+    .markdown-section blockquote p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* 行内代码与代码块 */
+    .markdown-section code {
+      font-family: var(--code-font-family);
+      font-size: 0.88em;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background-color: #f1f5f9;
+      color: #d946ef;
+    }
+
+    .markdown-section pre {
+      border-radius: 8px;
+      padding: 16px 20px;
+      background-color: #f8fafc;
+      border: 1px solid #e2e8f0;
+      line-height: 1.6;
+      overflow-x: auto;
+    }
+
+    .markdown-section pre > code {
+      background: transparent;
+      color: #1e293b;
+      padding: 0;
+      font-size: 0.9em;
+    }
+
+    /* 表格美化 */
+    .markdown-section table {
+      display: block;
+      overflow-x: auto;
+      border-collapse: collapse;
+      margin: 1.4em 0;
+      border-radius: 6px;
+    }
+
+    .markdown-section th {
+      background-color: #f1f5f9;
+      font-weight: 600;
+      color: #1e293b;
+    }
+
+    .markdown-section th,
+    .markdown-section td {
+      border: 1px solid #e2e8f0;
+      padding: 10px 14px;
+    }
+
+    .markdown-section tr:nth-child(even) {
+      background-color: #f8fafc;
+    }
+
+    /* 图片圆角与轻阴影 */
+    .markdown-section img {
+      display: block;
+      margin: 1.4em auto;
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+    }
+
+    /* 侧边栏字体与当前高亮 */
+    .sidebar {
+      font-family: var(--base-font-family);
+    }
+
+    .sidebar-nav li > a {
+      font-size: 14px;
+      line-height: 1.6;
+      padding: 4px 0;
+    }
+
+    .sidebar-nav li.active > a {
+      color: var(--theme-color);
+      font-weight: 600;
+    }
+  </style>
 </head>
 <body class="loading">
   <div id="app"></div>
