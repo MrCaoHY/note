@@ -40,7 +40,7 @@
 
 但从下面的图中你可以看到，虽然我找到了 Fiddler 截获 WebSocket 接口的办法，却不难发现，所截获的全部消息都在日志里面，根本无法操作，所以我想用 Fiddler 完成 WebSocket 测试的想法也就胎死腹中了。
 
-![](/%E6%8E%A5%E5%8F%A3%E6%B5%8B%E8%AF%95%E5%AE%9E%E6%88%98%E8%AF%BE/images/0b5cc6da348650ccc4bff66b1280566c.png)
+![](images/0b5cc6da348650ccc4bff66b1280566c.png)
 
 但是，我可以借助 Fiddler 分析 WebSocket 的接口，这也和我们一开始给 Fiddler 这款工具的定位一样，那就是通过它辅助分析我们的被测接口。
 

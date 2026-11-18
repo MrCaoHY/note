@@ -18,7 +18,7 @@ API 作为对外暴露的接口，也是需要保持高稳定性的组件。我�
 
 从行为角度和数据角度构造 API 存在什么差异呢？让我们通过一个例子来解释它，我想你也猜到了，对，还是极客时间的例子。我们在讲解催化剂方法时，展示过它：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/96c6280d81050604c866e41dc1f10082.png)
+![](images/96c6280d81050604c866e41dc1f10082.png)
 
 如果从行为角度进行 API 设计，那么我们的着眼点就应该从人机交互上入手，寻找系统提供了什么服务，并针对这些服务进行 API 设计。
 
@@ -121,13 +121,13 @@ message SendGiftRequest {
 
 比如 URI 中有这样的一个路径`/users/爱学习的鱼玄机/subscriptions`，那么我们可以认为它实际是下图所示的图结构中，对右侧分支遍历的结果：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/021d8e7d1e769b2a9014dab616e4ef7e.png)
+![](images/021d8e7d1e769b2a9014dab616e4ef7e.png)
 
 那么同样地，如果是对左侧分支遍历，就能得到另外一个路径“/users/ 会聊骚的黄庭坚 /subscriptions”。
 
 仔细看这个图，我们会发现它是将`User-Subscriptions`聚合进行实例化之后，再将实例与领域对象结合在一起，得到的对象图：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/1cd493eeea45ae6366e3f368e49c9b68.png)
+![](images/1cd493eeea45ae6366e3f368e49c9b68.png)
 
 那么当我们看到路径`/users/爱学习的鱼玄机/subscriptions`时，或者它的模板化表示形式`/users/{user_id}/subscriptions`时，我们就可以还原出路径背后的领域模型，也就是`User-Subscription`的一对多聚合关系。
 
@@ -142,7 +142,7 @@ message SendGiftRequest {
 1. 以 User 为聚合根的`User-Subscriptions`聚合；
 2. 以 Author 为聚合根的`Author-Column-Content`聚合。
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/e9321a22149e8c89498b4cc61706bc45.png)
+![](images/e9321a22149e8c89498b4cc61706bc45.png)
 
 然后我们就可以从聚合中依次设计对应的 API 模板了。比如对于`User-Subscription`聚合，我们可以得到如下的 URI 模板。
 
@@ -172,11 +172,11 @@ message SendGiftRequest {
 
 在根据领域模型得到了 URI 模板之后，我们就需要围绕着 URI 进行 API 设计了。这个过程惊人地简单。我们需要做的就是构造这样一张表格，表格中包含：角色、HTTP 方法、URI、业务场景这样一些条目。如下图所示：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/dcd97459206ae2511229b634a16718c2.png)
+![](images/dcd97459206ae2511229b634a16718c2.png)
 
 然后，我们只需填入角色、URI，然后按照穷举法，填入所有的 HTTP 方法就可以了。比如，对于`/users/{user_id}/subscriptions`这个 URI，我们可以将常用的四个 HTTP 方法填入表格：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/051300b423b9b26ce6c31d8d1bacaef1.png)
+![](images/051300b423b9b26ce6c31d8d1bacaef1.png)
 
 这里有个我个人的小偏好，就是**通过模板化表示角色**（通常的做法是以统一语言中的角色名加 _id）。比如第一行，实际我的意思是，角色是 user，并且和 URI 中给出的`user_id`是同一个人。当然，也可以只统一语言中的角色名。
 
@@ -186,11 +186,11 @@ message SendGiftRequest {
 
 最后，在这个例子里，我们得到的 API 候选是这样的：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/554df126acc556c222900271040596ed.png)
+![](images/554df126acc556c222900271040596ed.png)
 
 这个过程很简单吧。那我们再来看一个例子，这个例子里我们引入不同的角色。我们通常会将 API 候选看作是 HTTP 方法和 URI 的组合，然而调用方的角色其实也是很重要的。过程我就省略了，方法和刚才讲的一样，我们着重看一下结果：
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/c987ffe6d315c78edf2188c8c83ebfa5.png)
+![](images/c987ffe6d315c78edf2188c8c83ebfa5.png)
 
 通常来说，已经订阅的专栏就无法修改了，但是我们假设有赠送功能。于是呢，读者发起的“对于专栏的修改”，那么其实就是赠送；与之相对的，由系统管理员发起的“对于读者订阅专栏的修改”，可能就是处理退订。
 
@@ -217,6 +217,6 @@ message SendGiftRequest {
 
 我们在使用 RESTful API 时，经常会遇到这种情况：不同的客户端（比如手机或页面）需要不同格式的数据。那么我们有没有办法，只提供一种格式的数据，但能满足所有客户端的需求，不需要根据客户端的要求而修改，并且还不怎么影响性能？
 
-![](/%E5%A6%82%E4%BD%95%E8%90%BD%E5%9C%B0%E4%B8%9A%E5%8A%A1%E5%BB%BA%E6%A8%A1/images/5da2d839119f155a52349cdc008c3eca.png)
+![](images/5da2d839119f155a52349cdc008c3eca.png)
 
 欢迎把你的思考和想法分享在留言区，我会和你交流讨论。我们下节课再见！

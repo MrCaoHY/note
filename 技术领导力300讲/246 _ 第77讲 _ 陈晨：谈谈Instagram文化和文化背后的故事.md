@@ -82,4 +82,4 @@ Instagram 的起源是图片社区，可以说没有社区生产图片就没有 
 
 （本文整理自 Senior Director of Engineering@Reddit 陈晨在 ArchSummit 大会上的分享，有删减。）
 
-![](/%E6%8A%80%E6%9C%AF%E9%A2%86%E5%AF%BC%E5%8A%9B300%E8%AE%B2/images/9d92a80caf1b113da0eab0842f582869.png)
+![](images/9d92a80caf1b113da0eab0842f582869.png)
